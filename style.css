@@ -1,0 +1,297 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f8ff;
+    color: #142b5f;
+    padding: 25px;
+    transition: 0.3s;
+}
+
+
+.container {
+    max-width: 1150px;
+    margin: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.title-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+    background: #2f6df6;
+
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    color: #7890bd;
+    font-size: 15px;
+}
+
+
+#themeButton {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+.add-area {
+    background-color: white;
+    padding: 18px;
+    border: 1px solid #dce7fa;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 14px;
+    border: 1px solid #cbdafa;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+}
+
+#taskInput:focus {
+    border-color: #2f6df6;
+}
+
+
+#addButton {
+    background: #2f6df6;
+    color: white;
+    padding: 0 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    outline: none;
+    border: none;
+
+    /* transition: 0.5s; */
+    cursor: pointer;
+}
+
+#addButton:hover {
+    background-color: #1f5de0;
+}
+
+#addButton:active {
+    transform: scale(0.8);
+}
+
+#deleteSelectedButton {
+    background: #ff4d55;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    border: none;
+    margin-bottom: 12px;
+    display: none;
+
+}
+
+.task-list {
+    background: white;
+    border: 1px solid #dce7fa;
+    border-radius: 12px;
+
+    padding: 0 20px;
+}
+
+
+
+.task {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e5ebf5;
+    gap: 15px;
+    padding: 8px 4px;
+    transition: 0.2s;
+}
+
+.task:last-child {
+    border-bottom: none;
+}
+
+.task.selected {
+    background: #eef4ff;
+}
+
+.task.checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #2f6df6;
+}
+
+.task-info {
+    flex: 1;
+}
+
+.task-title {
+    font-size: 16px;
+    color: #142b5f;
+
+    margin-bottom: 5px;
+}
+
+
+.task-date {
+    color: #7890bd;
+    font-size: 12px;
+}
+
+
+.task-button {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-button,
+.delete-button {
+    width: 42px;
+    height: 38px;
+    margin: 0 12px;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+}
+
+.edit-button {
+    background: #2f6df6;
+}
+
+.delete-button {
+    background-color: #ff4d55;
+}
+
+.edit-button:hover {
+    background-color: #1f5de0;
+}
+
+.delete-button:hover {
+    background-color: #e83d45;
+}
+
+
+
+/* toast */
+
+#toastContainer {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 999;
+    
+}
+
+
+.toast {
+    background: #142b5f;
+    color: white;
+    padding: 13px 22px;
+    border-radius: 9px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    opacity: 0;
+    transform: translateY(15px);
+    transition: all 0.25s ease;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast.success {
+    background: #23a55a;
+}
+
+.toast.info {
+    background: tomato;
+}
+
+body.dark .toast {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+
+
+/* Dark Mode */
+body.dark {
+    background: #111827;
+    color: white;
+}
+
+body.dark .add-area,
+body.dark .task-list {
+    background-color: #1f2937;
+    border-color: #374151;
+}
+
+body.dark #taskInput {
+    background-color: #111827;
+    color: white;
+    border-color: #4b5563;
+}
+
+
+body.dark .task {
+    border-color: #374151;
+}
+
+body.dark .task.selected {
+    background: #273858;
+}
+
+body.dark .task-title {
+    color: white;
+}
+
+body.dark .task-date,
+body.dark .subtitle {
+    color: #9ca3af;
+}

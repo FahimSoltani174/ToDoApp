@@ -1,10 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
-    
+    <div class="container">
+        <div class="header">
+            <div class="title-area">
+                <div class="logo">
+                    ✓
+                </div>
+                <div>
+                    <h1>To Do List</h1>
+                    <p class="subtitle">
+                        Small steps make big progress!
+                    </p>
+                </div>
+            </div>
+
+            <button id="themeButton">
+                ☀️
+            </button>
+        </div>
+
+        <div class="add-area">
+            <input type="text" id="taskInput" placeholder="Add a new task...">
+
+            <button id="addButton">
+                ＋ Add Task
+            </button>
+        </div>
+
+        <button id="deleteSelectedButton">
+            🗑 Delete Selected
+        </button>
+
+        <div class="task-list" id="taskList">
+            
+        </div>
+
+    </div>
+
+
+    <!-- TOAST CONTAINER -->
+
+    <div id="toastContainer">
+        
+    </div>
+
+
+
+  
+    <script src="app.js"></script>
+
 </body>
 </html>
